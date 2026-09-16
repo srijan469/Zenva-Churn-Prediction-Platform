@@ -1,0 +1,564 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* -----------------------------------------
+   Header
+----------------------------------------- */
+
+.top-header {
+  height: 70px;
+  background: #2f578e;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+/* -----------------------------------------
+   Layout
+----------------------------------------- */
+
+.app-layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+  width: 240px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 25px 15px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.nav-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #475569;
+  padding: 13px 15px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.nav-item:hover {
+  background: #f1f5f9;
+}
+
+.nav-item.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.main-content {
+  flex: 1;
+  padding: 35px;
+  min-width: 0;
+}
+
+/* -----------------------------------------
+   Page headings
+----------------------------------------- */
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-heading {
+  margin-bottom: 28px;
+}
+
+.page-heading h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-heading p {
+  margin: 0;
+  color: #64748b;
+  max-width: 750px;
+  line-height: 1.6;
+}
+
+/* -----------------------------------------
+   Dashboard
+----------------------------------------- */
+
+.welcome-card {
+  background: #213a57;
+  color: white;
+  border-radius: 14px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.welcome-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.welcome-card p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+.welcome-card button {
+  border: none;
+  background: white;
+  color: #111827;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.dashboard-icon {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.dashboard-card h3 {
+  margin: 0 0 10px;
+}
+
+.dashboard-card p {
+  color: #64748b;
+  line-height: 1.5;
+  min-height: 72px;
+}
+
+.dashboard-card button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* -----------------------------------------
+   Prediction form
+----------------------------------------- */
+
+.prediction-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field span {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 15px;
+  background: white;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.predict-button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.predict-button:hover {
+  background: #1d4ed8;
+}
+
+/* -----------------------------------------
+   Prediction result
+----------------------------------------- */
+
+.result-card {
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
+.result-card h3 {
+  margin-top: 0;
+}
+
+.result-card p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 7px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* -----------------------------------------
+   Data & Insights
+----------------------------------------- */
+
+.upload-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 30px;
+}
+
+.upload-box h3 {
+  margin-top: 0;
+}
+
+.upload-box p {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.upload-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  background: #1d4ed8;
+}
+
+.dataset-header {
+  margin-bottom: 20px;
+}
+
+.dataset-header h3 {
+  margin-bottom: 5px;
+}
+
+.dataset-header p {
+  color: #64748b;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.summary-card span {
+  display: block;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.summary-card strong {
+  font-size: 26px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.chart-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.chart-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.chart-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* -----------------------------------------
+   Prediction History
+----------------------------------------- */
+
+.history-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #111827;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.history-button:hover {
+  background: #1f2937;
+}
+
+.history-table-container {
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+.history-table th,
+.history-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.history-table th {
+  background: #f8fafc;
+  font-size: 14px;
+  color: #475569;
+}
+
+.history-table td {
+  font-size: 14px;
+}
+
+.history-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.risk-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.risk-low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.risk-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.risk-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty-history {
+  margin-top: 20px;
+  padding: 25px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+/* -----------------------------------------
+   Responsive
+----------------------------------------- */
+
+@media (max-width: 950px) {
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .top-header {
+    padding: 0 18px;
+  }
+
+  .brand {
+    display: block;
+  }
+
+  .brand span {
+    display: block;
+    margin-top: 3px;
+  }
+
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
