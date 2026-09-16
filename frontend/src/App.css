@@ -251,6 +251,8 @@ select {
   border-radius: 7px;
   font-size: 15px;
   background: white;
+  color: #1f2937;
+  color-scheme: light;
 }
 
 .field input:focus,
